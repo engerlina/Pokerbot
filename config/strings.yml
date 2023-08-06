@@ -1,0 +1,436 @@
+help:
+  en: |-
+    <b>Commands</b>:
+    ⚪ /mode – Select chat mode
+    ⚪ /new – Start new dialog
+    ⚪ /balance – Show balance
+    ⚪ /settings – Show settings (choose GPT-4 here)
+    ⚪ /retry – Re-generate last bot answer
+    ⚪ /help – Show help
+
+    Add bot to <b>group chat</b>: /help_group_chat
+
+    🧠 <b>GPT-4</b> is available now in /settings!
+    🎨 Draw images from text prompts in <b>👩‍🎨 Image Generation</b> /mode
+    🎤 You can send <b>Voice Messages</b> instead of text
+
+    <b>Important note 1.</b> The longer your dialog, the more tokens are spent with each new message. To start new dialog, send /new command
+
+    <b>Important note 2.</b> Write in 🇬🇧 English for a better quality of answers
+
+    👩🏼‍💻 Support: {support_username}
+  ru: |-
+    <b>Команды</b>:
+    ⚪ /mode – Выбрать режим чата
+    ⚪ /new – Начать новый диалог
+    ⚪ /balance – Показать баланс
+    ⚪ /settings – Настройки (GPT-4 здесь)
+    ⚪ /retry – Создать последнее сообщение заново
+    ⚪ /help – Помощь
+
+    Добавь бота в <b>групповой чат</b>: /help_group_chat
+
+    🧠 <b>GPT-4</b> доступен по команде /settings!
+    🎨 Создавайте изображения по текстовому описанию в режиме <b>👩‍🎨 Генерация Изображений</b> (/mode)
+    🎤 Вы можете присылать <b>Голосовые Сообщения</b> вместо текста
+
+    <b>Важно 1.</b> Чем длиннее ваш диалог, тем больше токенов расходуется с каждым новым сообщением. Чтобы начать новый диалог отправьте команду /new
+
+    <b>Важно 2.</b> Пишите на 🇬🇧 английском языке для лучшего качества ответов
+
+    👩🏼‍💻 Тех. поддержка: {support_username}
+
+help_group_chat:
+  en: |-
+    You can add bot to any <b>group chat</b> to help and entertain its participants!
+
+    Instructions (see <b>video</b> below):
+    1. Add the bot to the group chat
+    2. Make it an <b>admin</b>, so that it can see messages (all other rights can be restricted)
+    3. You're awesome!
+
+    To get a reply from the bot in the chat – @ <b>tag</b> it or <b>reply</b> to its message.
+    For example: "{bot_username} write a poem about Telegram"
+  ru: |-
+    Вы можете добавить бота в любой <b>групповой чат</b>, чтобы он помогал и развлекал его участников!
+
+    Инструкция (см. <b>видео</b> ниже):
+    1. Добавьте бота в групповой чат
+    2. Сделайте его <b>админом</b>, чтобы он мог видеть сообщения (все другие права ему можно не выдавать)
+    3. Вы прекрасны!
+
+    Чтобы бот вам ответил в чате – @ <b>тегните</b> его или <b>ответьте</b> на его сообщение.
+    Например: "{bot_username} напиши стихотворение про Телеграм"
+
+hello:
+  en: Hi! I'm <b>ChatGPT</b> bot 🤖
+  ru: Привет! Я <b>ChatGPT</b> бот 🤖
+
+previous_message_is_not_answered_yet:
+  en: |-
+    ⏳ Please <b>wait</b> for a reply to the previous message
+    Or you can /cancel it
+
+  ru: |-
+    ⏳ Пожалуйста, <b>дождитесь</b> ответа на предыдущее сообщение
+    Или вы можете отменить его: /cancel
+
+n_tokens_added:
+  en: 🟣 <b>{n_tokens_added}</b> tokens were successfully added to your balance!
+  ru: 🟣 <b>{n_tokens_added}</b> токенов были успешно добавлены на ваш баланс!
+
+ask_new_dialog_due_to_timeout:
+  en: |-
+    ⏳ I see you are back. Do you want to start a <b>new dialog</b>?
+
+  ru: |-
+    ⏳ Вижу, вы вернулись. Хотите начать <b>новый диалог</b>?
+
+new_dialog_button:
+  en: "Yes"
+  ru: "Да"
+
+continue_dialog_button:
+  en: "No, continue"
+  ru: "Нет, продолжить"
+
+starting_new_dialog_due_to_timeout:
+  en: ✅ Starting new dialog due to timeout (<b>{chat_mode_name}</b> mode)
+  ru: ✅ Начинаю новый диалог (режим <b>{chat_mode_name}</b>)
+
+empty_message:
+  en: 🥲 You sent <b>empty message</b>. Please, try again!
+  ru: 🥲 Вы отправили <b>пустое сообщение</b>.{} Попробуйте снова!
+
+dialog_is_too_long_first_message:
+  en: |-
+    ✍️ Current dialog is too long, so your <b>first message</b> was removed from the context
+
+    Send /new command to start new dialog
+
+  ru: |-
+    ✍️ Текущий диалог слишком длинный, поэтому ваше <b>первое сообщение</b> было удалено из контекста
+
+    Отправьте команду /new, чтобы начать новый диалог
+
+dialog_is_too_long:
+  en: |-
+    ✍️ Current dialog is too long, so <b>{n_first_dialog_messages_removed} first messages</b> were removed from the context
+
+    Send /new command to start new dialog"
+  ru: |-
+    ✍️ Текущий диалог слишком длинный, поэтому <b>{n_first_dialog_messages_removed} первых сообщения</b> были удалены из контекста
+
+    Отправьте команду /new, чтобы начать новый диалог
+
+canceled:
+  en: ✅ Canceled
+  ru: ✅ Отменено
+
+edited_message:
+  en: 🥲 Unfortunately, message <b>editing</b> is not supported
+  ru: 🥲 К сожалению, <b>редактирование</b> сообщений пока не поддерживается
+
+no_message_to_retry:
+  en: 🤷‍♂️ No message to retry
+  ru: 🤷‍♂️ Нет сообщения для повторной попытки
+
+new_dialog:
+  en: ✅ Starting new dialog
+  ru: ✅ Начинаю новый диалог
+
+nothing_to_cancel:
+  en: <i>Nothing to cancel...</i> 🤷‍♂️
+  ru: <i>Отменять нечего...</i> 🤷‍♂️
+
+request_doesnt_comply:
+  en: |-
+    🥲 Your request <b>doesn't comply</b> with OpenAI's usage policies
+    What did you write there, huh?
+
+  ru: |-
+    🥲 Ваш запрос <b>не соответствует</b> политике использования OpenAI
+    Что вы там такого написали, а?
+
+image_created_with:
+  en: 🤖 Created with {bot_username}
+  ru: 🤖 Нарисовано с помощью {bot_username}
+
+voice_message_is_too_long:
+  en: 🥲 Your voice message is <b>too long</b>. 3 minutes is maximum
+  ru: 🥲 Ваше голосовое сообщение <b>слишком длинное</b>. 3 минуты – максимум
+
+select_chat_mode:
+  en: "Select <b>chat mode</b> ({n_chat_modes} modes available):"
+  ru: "Выберите <b>режим чата</b> (доступно {n_chat_modes} режимов):"
+
+select_model:
+  en: "Select <b>model</b>:"
+  ru: "Выберите <b>модель</b>:"
+
+you_have_have_n_tokens_left:
+  en: |-
+    🟢 You have <b>{token_balance}</b> tokens left (you totally spent <i>{total_n_used_bot_tokens}</i> tokens)
+
+    Get <b>more</b> tokens:
+  ru: |-
+    🟢 У вас осталось <b>{token_balance}</b> токенов (всего вы потратили <i>{total_n_used_bot_tokens}</i> токенов)
+
+    Получить <b>больше</b> токенов:
+
+you_have_have_no_tokens_left:
+  en: 🔴 You have <b>NO</b> tokens left (you totally spent <i>{total_n_used_bot_tokens}</i> tokens)
+  ru: 🔴 У вас <b>закончились</b> токены (всего вы потратили <i>{total_n_used_bot_tokens}</i> токенов)
+
+you_have_have_no_tokens_left_for_pro_chat_mode:
+  en: |-
+    🔴 You don't have <b>enough</b> tokens to use PRO chat mode <b>{chat_mode_name}</b> (you totally spent <i>{total_n_used_bot_tokens}</i> tokens)
+  ru: |-
+    🔴 У вас <b>недостаточно</b> токенов, чтобы воспользоваться PRO-режимом <b>{chat_mode_name}</b> (всего вы потратили <i>{total_n_used_bot_tokens}</i> токенов)
+
+you_have_have_no_tokens_left_for_voice_message:
+  en: |-
+    🔴 You don't have <b>enough</b> tokens to transcribe <b>Voice Message</b> (you totally spent <i>{total_n_used_bot_tokens}</i> tokens)
+  ru: |-
+    🔴 У вас <b>недостаточно</b> токенов, чтобы распознать <b>Голосовое Сообщение</b> (всего вы потратили <i>{total_n_used_bot_tokens}</i> токенов)
+
+
+call_to_buy_tokens:
+  en: |-
+    <b>Buy tokens</b> to:
+     ⤷ Get ⚡ <b>instant</b> answers (no waiting in queue)
+     ⤷ Have access to all <b>PRO modes</b> (👩‍🎨 Image Generation and more)
+     ⤷ Send Voice Messages
+
+    Tap the button:
+  ru: |-
+    <b>Купите токены</b>, чтобы:
+     ⤷ Получать ⚡ <b>мгновенные</b> ответы без очереди
+     ⤷ Иметь доступ ко всем <b>PRO-режимам</b> (👩‍🎨 Генерация Изображений и пр.)
+     ⤷ Отправлять Голосовые Сообщения
+
+    Нажмите на кнопку:
+
+to_continue_using_the_bot:
+  en: "To continue using the bot, <b>tap the button</b>:"
+  ru: "Чтобы продолжить пользоваться ботом, <b>нажмите на кнопку</b>:"
+
+get_tokens_button:
+  en: 🥑 Buy Tokens
+  ru: 🥑 Купить Токены
+
+choose_payment_method:
+  en: "Choose <b>payment method</b>:"
+  ru: "Выберите <b>метод оплаты</b>:"
+
+choose_product:
+  en: How many <b>tokens</b> do you want to buy?
+  ru: Сколько <b>токенов</b> вы хотите купить?
+
+invoice_cryptomus:
+  en: |-
+    🔗 Here is <a href="{invoice_url}">your payment link</a> (<b>{n_tokens_to_add}</b> tokens)
+
+    You have 1 hour to pay it before it expires. If you are facing any problems, write to us: {support_username}.
+  ru: |-
+    🔗 Ваша <a href="{invoice_url}">ссылка для оплаты</a> (<b>{n_tokens_to_add}</b> токенов)
+
+    Ссылка действительна 1 час. Если вы столкнулись с какими-то проблемами, напишите нам: {support_username}.
+
+exception:
+  en: |-
+    🥲 OpenAI servers are overloaded...
+    Please <b>try again later</b>
+  ru: |-
+    🥲 Серверы OpenAI перегружены...
+    Пожалуйста, <b>попробуйте еще раз</b>
+
+welcome_message_1:
+  en:
+    - "Hi!"
+    - "I'm the most advanced <b>Artificial Intelligence</b> in the world (created by OpenAI)."
+    - ""
+    - "I can help you with <b>any task</b>. For example:"
+    - "- write/debug/explain code"
+    - "- draft emails"
+    - "- write blog posts on any topic"
+    - "- help with homework"
+    - "- write poems/songs"
+    - "- be your personal tutor"
+    - "- just chat"
+    - "- ... <b>anything you want</b>!"
+  ru:
+    - "Привет!"
+    - "Я самый продвинутый <b>Искусственный Интеллект</b> в мире (создан компанией OpenAI)."
+    - ""
+    - "Я могу помочь вам с <b>любой задачей</b>. Например:"
+    - "- написать/отладить/объяснить код"
+    - "- составить email"
+    - "- написать блог на любую тему"
+    - "- помочь с домашним заданием"
+    - "- сочинить стих или песню"
+    - "- быть вашим личным учителем"
+    - "- просто общаться"
+    - "- ... я могу <b>что угодно</b>!"
+
+welcome_message_2:
+  en:
+    - "Before you start, it's important to know <b>3 things</b>:"
+    - "1. You can chat with me in any language. But 🇬🇧 <b>English</b> works best"
+    - "2. You should try my cool features: 🧠 GPT-4, 🎨 Image Generation, 🎤 Voice messages"
+    - "3. If you need <b>more info</b>, just send me /help command"
+  ru:
+    - "Прежде чем начать, важно знать <b>3 вещи</b>:"
+    - "1. Вы можете общаться со мной на любом языке. Но 🇬🇧 <b>английский</b> работает лучше всего"
+    - "2. Обязяательно попробуйте мои крутые функции: 🧠 GPT-4, 🎨 Генерация Изображений, 🎤 Голосовые сообщения"
+    - "3. Если вам нужна <b>помощь</b> – воспользуйтесь командой /help"
+
+welcome_message_3:
+  en:
+    - "So... I think it's time to start. <b>Let's gooo</b>! 👻"
+  ru:
+    - "Так... Я думаю, пришло время начинать. <b>Поехали</b>! 👻"
+
+pro_chat_mode:
+  en: |-
+    {chat_mode_name} is a <b>PRO mode</b>. To use it or other PRO modes, you need to make <b>any purchase</b> below.
+
+    After payment you will have access to all PRO-modes <b>forever</b>
+  ru: |-
+    {chat_mode_name} – это <b>PRO-режим</b>. Чтобы воспользоваться им или другими PRO-режимами, надо совершить <b>любую покупку</b> ниже.
+
+    После оплаты вам будут доступны все PRO-режимы <b>навсегда</b>!
+
+pro_model:
+  en: 🟣 {model_name} is a <b>PRO model</b>. To use it, you need to make <b>any purchase</b> below. After payment you will have access to {model_name} <b>forever</b>
+  ru: 🟣 {model_name} – это <b>PRO-модель</b>. Чтобы воспользоваться ей, надо совершить <b>любую покупку</b> ниже. После оплаты {model_name} будут вам доступна <b>навсегда</b>!
+
+invite_friend_button:
+  en: 💌 Get Free Tokens
+  ru: 💌 Получить Бесплатные Токены
+
+invite_friend:
+  en: |-
+    💌 You can invite friend and get <b>{n_tokens_to_add_to_ref}</b> free tokens!
+
+    Just <b>forward the message below</b> to your friend:
+    - When your friend starts the bot, you'll get free tokens
+    - You can invite up to <b>{max_invites_per_user} friends</b> (you used {n_already_invited_users}/{max_invites_per_user} invites)
+    - Your friend has to use the bot for the <b>first time</b> with your invite link
+  ru: |-
+    💌 Вы можете пригласить друга и получить <b>{n_tokens_to_add_to_ref}</b> бесплатных токенов!
+
+    Просто <b>перешлите сообщение ниже</b> своему другу:
+    - Когда ваш друг запустит бота, вы получите бесплатные токены
+    - Всего вы можете пригласить <b>{max_invites_per_user}-x друзей</b> (вы использовали {n_already_invited_users}/{max_invites_per_user} инвайтов)
+    - Ваш друг должен <b>впервые</b> воспользоваться ботом по вашей ссылке
+
+invite_message:
+  en: |-
+    You are invited to <a href="{invite_url}">{bot_name}</a> bot! Tap this link to start:
+    🚀 <a href="{invite_url}">Start the bot</a>
+  ru: |-
+    Вы приглашены в бота <a href="{invite_url}">{bot_name}</a>! Нажмите на ссылку, чтобы начать:
+    🚀 <a href="{invite_url}">Запустить бота</a>
+
+your_friend_joined:
+  en: |-
+    <a href="tg://user?id={friend_user_id}">Your friend</a> just joined the bot with your invite link!
+  ru: |-
+    <a href="tg://user?id={friend_user_id}">Ваш друг</a> только что присоединился к боту по вашему инвайту!
+
+redirect_to_chatgpt_plus:
+  en: |-
+    This chat mode is available in <a href="https://t.me/chatgpt_plus1_bot?start=password=chatgptplus">another bot</a>, if you know what I mean 😏
+    🍓 <a href="https://t.me/chatgpt_plus1_bot?start=password=chatgptplus">Start the bot</a>
+  ru: |-
+    Этот режим доступен в <a href="https://t.me/chatgpt_plus1_bot?start=password=chatgptplus">другом боте</a>, если вы понимаете, о чём я 😏
+    🍓 <a href="https://t.me/chatgpt_plus1_bot?start=password=chatgptplus">Запустить бота</a>
+
+message_queue_progress_message:
+  en: |-
+    You don't have enough tokens to get <b>instant answer</b>. Your message will be processed in the shared queue
+
+    📍 Queue position: <b>{message_queue_position} out of {n_tasks_in_message_queue}</b>
+      ⤷ <i>Cancel message: /cancel</i>
+      ⤷ <i>Status updates every {message_queue_progress_update_time:.0f} seconds</i>
+
+    Want to get an answer ⚡<b>instantly</b>?
+    Tap the button:
+  ru: |-
+    У вас недостаточно токенов для получения <b>мгновенного ответа</b>. Cообщение будет обработано в общей очереди
+
+    📍 Позиция в очереди: <b>{message_queue_position} из {n_tasks_in_message_queue}</b>
+      ⤷ <i>Отменить: /cancel</i>
+      ⤷ <i>Статус обновляется каждые {message_queue_progress_update_time:.0f} секунды</i>
+
+    Хотите получать ответ ⚡<b>мгновенно</b>?
+    Нажмите на кнопку:
+
+message_queue_progress_message_button:
+  en: ⚡️ Speed up
+  ru: ⚡️ Ускорить
+
+switch_chat_mode_to_default_because_not_enough_tokens:
+  en: |-
+    🔴 You don't have <b>enough</b> tokens to use PRO chat mode <b>{current_chat_mode_name}</b>. Switching to default chat mode <b>{default_chat_mode_name}</b>
+  ru: |-
+    🔴 У вас <b>недостаточно</b> токенов, чтобы воспользоваться PRO-режимом <b>{current_chat_mode_name}</b>. Переключаюсь на режим <b>{default_chat_mode_name}</b>
+
+switch_model_to_default_because_not_enough_tokens:
+  en: |-
+    🔴 You don't have <b>enough</b> tokens to use PRO model <b>{current_model_name}</b>. Switching to default model <b>{default_model_name}</b>
+  ru: |-
+    🔴 У вас <b>недостаточно</b> токенов, чтобы воспользоваться PRO моделью <b>{current_model_name}</b>. Переключаюсь на модель <b>{default_model_name}</b>
+
+
+some_error_in_error_handler:
+  en: |-
+    🥲  Some unknown error happened...
+      ⤷ error_id: <code>{error_id}</code>
+
+    Please <b>forward this message</b> to our 👩🏼‍💻 technical support: {support_username}. We'll fix it!
+  ru: |-
+    🥲  Произошла какая-то неизвестная ошибка...
+      ⤷ error_id: <code>{error_id}</code>
+
+    Пожалуйста, <b>перешлите это сообщение</b> в нашу 👩🏼‍💻 тех. поддержку: {support_username}. Мы всё починим!
+
+voice_messages_bot_ads:
+  en: |
+    🎙 <b>Try our new</b> <a href="https://t.me/my_voice_messages_bot?start=source=chatgpt_karfly_bot">Voice-to-Text</a> <b>bot!</b>
+
+    Features:
+    - Automatic <b>summary</b> of voices with ChatGPT
+    - <b>3x faster</b> and much <b>better quality</b> than Telegram Premium
+    - Formatted text with <b>timecodes</b>
+
+    This bot is a life changer for those who <s>hate</s> receive many voice messages 😏
+
+  ru: |
+    🎙 Попробуйте нашего <b>нового</b> <a href="https://t.me/my_voice_messages_bot?start=source=chatgpt_karfly_bot">Voice-to-Text</a> <b>бота!</b>
+
+    Уникальные функции:
+    - <b>Краткий пересказ</b> голосовых сообщений с помощью ChatGPT
+    - В 3 раза <b>быстрее</b> и <b>качественнее</b>, чем Телеграм Premium
+    - Форматированный текст с <b>таймкодами</b>
+
+    Этот бот изменит жизнь тем, кто <s>ненавидит</s> получает много голосовых сообщений 😏
+
+voice_messages_bot_ads_button:
+  en: "⚡ Start the bot"
+  ru: "⚡ Запустить бота"
+
+message_queue_is_full:
+  en: |-
+    🔴 The bot is currently heavily <b>overloaded</b> (more than {message_queue_max_size} messages in the queue)
+
+    Please try to send message <b>a bit later</b>, or...
+  ru: |-
+    🔴 Сейчас бот сильно <b>перегружен</b> (более {message_queue_max_size} сообщений в очереди)
+
+    Попробуйте прислать сообщение <b>чуть позже</b>, либо...
+
+model_answer_is_empty:
+  en: <i>🥲 Model replied with empty message</i>
+  ru: <i>🥲 Модель прислала пустой ответ</i>

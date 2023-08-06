@@ -1,0 +1,70 @@
+available_text_models: ["gpt-3.5-turbo", "gpt-4"]
+
+info:
+  gpt-3.5-turbo:
+    type: chat_completion
+    name: ChatGPT
+    is_pro: false
+    description:
+      en: ChatGPT is that well-known model. It's <b>fast</b> and <b>cheap</b>. Ideal for everyday tasks. If there are some tasks it can't handle, try the <b>GPT-4</b>
+      ru: ChatGPT – самая популярная модель. Она <b>быстрая</b> и <b>дешевая</b>. Идеальна для повседневных задач. Если есть задачи, с которыми она не справляется, попробуйте <b>GPT-4</b>
+
+    price_per_1000_input_tokens: 0.002
+    price_per_1000_output_tokens: 0.002
+
+    scores:
+      - title:
+          en: Smart
+          ru: Ум
+        score: 3
+
+      - title:
+          en: Fast
+          ru: Скорость
+        score: 5
+
+      - title:
+          en: Cheap
+          ru: Низкая стоимость
+        score: 5
+
+  gpt-4:
+    type: chat_completion
+    name: GPT-4
+    is_pro: true
+    description:
+      en: GPT-4 is the <b>smartest</b> and most advanced model in the world. But it is slower and not as cost-efficient as ChatGPT. Best choice for <b>complex</b> intellectual tasks
+      ru: GPT-4 - это <b>самая умная</b> и продвинутая модель в мире. Но она медленнее и дороже, чем ChatGPT. Лучший выбор для <b>сложных</b> интеллектуальных задач
+
+    price_per_1000_input_tokens: 0.03
+    price_per_1000_output_tokens: 0.06
+
+    scores:
+      - title:
+          en: Smart
+          ru: Ум
+        score: 5
+
+      - title:
+          en: Fast
+          ru: Скорость
+        score: 2
+
+      - title:
+          en: Cheap
+          ru: Низкая стоимость
+        score: 2
+
+  dalle-2:
+    type: image
+    is_pro: false
+    price_per_1_image: 0.018  # 512x512
+
+  whisper-1:
+    type: audio
+    is_pro: false
+    price_per_1_min: 0.006
+
+  moderation:
+    type: moderation
+    is_pro: false

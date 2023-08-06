@@ -1,0 +1,189 @@
+telegram_token: ""
+allowed_telegram_usernames: []  # if empty, the bot is available to anyone
+new_dialog_timeout: 600.0  # new dialog starts after timeout (in seconds)
+initial_token_balance: 1000
+default_lang: en
+return_n_generated_images: 1
+n_chat_modes_per_page: 5
+check_not_expired_payments_update_time: 180.0  # in seconds
+
+# model apis
+model_apis:
+  gpt-3.5-turbo:
+    default:
+      class: langchain.chat_models.AzureChatOpenAI
+      kwargs:
+        model_name: "gpt-3.5-turbo"
+        streaming: True
+        temperature: 0.7
+        max_tokens: 1000
+
+        # auth
+        openai_api_type: "azure"
+        openai_api_key: ""
+        openai_api_base: "https://XXX.openai.azure.com"
+        openai_api_version: "2023-05-15"
+        deployment_name: ""
+
+      streaming_kwargs:
+        max_initial_request_retries: 3
+        max_streaming_retries: 2
+
+    fallback:
+      class: langchain.chat_models.ChatOpenAI
+      kwargs:
+        model_name: "gpt-3.5-turbo"
+        streaming: True
+        temperature: 0.7
+        max_tokens: 1000
+
+        # auth
+        openai_api_key: ""
+
+      streaming_kwargs:
+        max_initial_request_retries: 3
+        max_streaming_retries: 2
+
+  gpt-4:
+    default:
+      class: langchain.chat_models.ChatOpenAI
+      kwargs:
+        model_name: "gpt-4"
+        streaming: True
+        temperature: 0.7
+        max_tokens: 1000
+
+        # auth
+        openai_api_key: ""
+
+      streaming_kwargs:
+        max_initial_request_retries: 3
+        max_streaming_retries: 2
+
+  dalle-2:
+    openai_api_key: ""
+
+  whisper-1:
+    openai_api_key: ""
+
+  moderation:
+    openai_api_key: ""
+
+# message queue
+enable_message_queue: false
+message_queue_token_budget_per_day: 1500000
+message_queue_initial_token_budget: 10000
+message_queue_progress_update_time: 5.0  # in seconds
+message_queue_max_size: 150  # None if unlimited
+message_queue_task_timeout: 100.0  # in seconds
+
+message_queue_watchdog_frequency: 180.0  # in seconds
+message_queue_watchdog_chat_id: null  # queue status will be sent there
+
+# ref
+enable_ref_system: true
+n_tokens_to_add_to_ref: 1000
+max_invites_per_user: 3
+notify_admins_about_new_invited_user: true
+
+# admin
+support_username: "@karfly"
+bot_username: "@chatgpt_karfly_bot"
+bot_name: "ChatGPT"
+
+admin_chat_id: null  # exceptions will be sent there
+admin_usernames: []  # at least 1 should be here
+
+# mixpanel
+mixpanel_project_token: null  # if null, events are not sent to mixpanel
+mixpanel_api_secret: null  # ChatGPT Bot Debug
+
+# other
+enable_voice_messages_bot_ads: false
+
+# payments
+payment_methods:
+  cards:
+    type: telegram_payments
+    name:
+      en: 🌎💳 Visa/Mastercard/etc
+      ru: 🌎💳 Зарубежные карты
+    product_keys: ["100k_tokens_usd", "500k_tokens_usd", "1m_tokens_usd"]
+
+    token: ""  # from @BotFather
+
+  cryptomus:
+    type: cryptomus
+    name:
+      en: 💎 Crypto
+      ru: 💎 Криптовалюта
+    product_keys: ["100k_tokens_usd", "500k_tokens_usd", "1m_tokens_usd"]
+
+    api_key: ""
+    merchant_id: ""
+
+  russian_cards:
+    type: telegram_payments
+    name:
+      en: 🇷🇺💳 RU cards
+      ru: 🇷🇺💳 Российские карты
+    product_keys: ["100k_tokens_rub", "500k_tokens_rub", "1m_tokens_rub"]
+
+    token: ""  # from @BotFather
+
+products:
+  # usd
+  100k_tokens_usd:
+    title_on_button: "🟣 +100K Tokens – 4.99$"
+    title: "🟣 100,000 ChatGPT Tokens"
+    description: "Tap the button below and pay"
+    photo_url: ""
+    n_tokens_to_add: 100000
+    price: 4.99
+    currency: "USD"
+
+  500k_tokens_usd:
+    title_on_button: "🟣 +500K tokens – 14.99$"
+    title: "🟣 500,000 ChatGPT Tokens"
+    description: "Tap the button below and pay"
+    photo_url: ""
+    n_tokens_to_add: 500000
+    price: 14.99
+    currency: "USD"
+
+  1m_tokens_usd:
+    title_on_button: "🟣 +1M tokens – 24.99$"
+    title: "🟣 1,000,000 ChatGPT Tokens"
+    description: "Tap the button below and pay"
+    photo_url: ""
+    n_tokens_to_add: 1000000
+    price: 24.99
+    currency: "USD"
+
+  # rub
+  100k_tokens_rub:
+    title_on_button: "🟣 +100K tokens – 399₽"
+    title: "🟣 100,000 ChatGPT Tokens"
+    description: "Tap the button below and pay"
+    photo_url: ""
+    n_tokens_to_add: 100000
+    price: 399.0
+    currency: "RUB"
+
+  500k_tokens_rub:
+    title_on_button: "🟣 +500K tokens – 999₽"
+    title: "🟣 500,000 ChatGPT Tokens"
+    description: "Tap the button below and pay"
+    photo_url: ""
+    n_tokens_to_add: 500000
+    price: 999.0
+    currency: "RUB"
+
+  1m_tokens_rub:
+    title_on_button: "🟣 +1M tokens – 1 899₽"
+    title: "🟣 1,000,000 ChatGPT Tokens"
+    description: "Tap the button below and pay"
+    photo_url: ""
+    n_tokens_to_add: 1000000
+    price: 1899.0
+    currency: "RUB"
